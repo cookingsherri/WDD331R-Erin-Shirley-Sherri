@@ -210,20 +210,6 @@ div.wrapper h3 {
   line-height: 1.1em;
 }
 
-/* background container for content*/
-html::after {
-  content: "";
-  display: block;
-  background-color: whitesmoke;
-  transform: rotate(5deg);
-  height: 100vh;
-  width: 70%;
-  position: sticky;
-  left: 2rem;
-  z-index: -30;
-  grid-row-start: 2;
-}
-
 .page-wrapper {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -235,19 +221,9 @@ html::after {
   background-color: transparent;
 }
 
-.participation,
-.benefits {
-  grid-area: 2;
-}
-
-.requirements {
-  grid-area: 3;
-}
-
 .main-supporting {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: " 1 " " 2 " " 3 ";
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 header {
@@ -265,8 +241,9 @@ header {
 }
 header h2 {
   position: absolute;
-  top: 4.5rem;
+  top: 4rem;
   left: 5rem;
+  font-size: 1.75rem;
 }
 
 section#zen-intro {
@@ -324,12 +301,22 @@ div .preamble p:nth-of-type(3) {
   float: left;
 }
 
+.explanation:nth-child(n+2),
+.participation:nth-child(n+2),
+.requirements:nth-child(n+2) {
+  float: left;
+}
+
+.preamble {
+  margin-top: 20px;
+}
+
 footer {
   display: flex;
-  font-size: 2.5em;
+  font-size: 2.2vw;
   position: absolute;
-  top: 15%;
-  right: 10%;
+  top: 12%;
+  right: 7%;
   z-index: 2;
 }
 footer .zen-validate-html,
@@ -338,7 +325,7 @@ footer .zen-license,
 footer .zen-accessibility,
 footer .zen-github {
   display: flex;
-  padding: 20px;
+  padding: 1vw;
   border-bottom: none;
   transform: rotate(25deg);
 }
@@ -451,12 +438,15 @@ aside {
   h1:before {
     padding-top: 150px;
     padding-right: 205px;
+    margin: 0 20px;
   }
   header {
     height: 200px;
   }
   header h2 {
-    top: 200px;
+    top: 35px;
+    left: 20px;
+    font-size: 20px;
   }
   footer {
     top: 27%;
@@ -477,6 +467,9 @@ footer .zen-license:hover,
 footer .zen-accessibility:hover,
 footer .zen-github:hover {
     transform: scale(1.25) rotate(0deg);
+  }
+  .page-wrapper {
+    grid-gap: none;
   }
   .zen-validate-html {
     top: 2%;
@@ -527,6 +520,12 @@ footer .zen-github:hover {
     background: url(/images/parallax4.png) no-repeat center;
     box-shadow: none;
   }
+  .preamble h3,
+.explanation h3,
+.participation h3,
+.requirements h3 {
+    float: none;
+  }
   .intro h3:before,
 .explanation h3:before,
 .participation h3::before,
@@ -543,13 +542,14 @@ footer:before {
     grid-column: 1/2;
     grid-row: 3;
   }
-  /* aside.sidebar{
-      position:absolute;
-      top:0%;
-      right:-270px;
-      transform: translate3d(-260px, 0, 0);
-      transition: transform 0.35s;
-  } */
+  aside.sidebar {
+    width: 100%;
+    margin: 0;
+  }
+  .sidebar {
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
