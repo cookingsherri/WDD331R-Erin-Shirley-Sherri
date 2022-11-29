@@ -3,12 +3,6 @@
 @use "molecules";
 @use "organisms" as o;
 
-@mixin skew(){
-  transform: skewX(-5deg);
-}
-@mixin skew-back(){
-  transform: skewX(5deg);
-}
 
 * {
   box-sizing: border-box;
@@ -144,24 +138,6 @@ div.wrapper{
   line-height: 1.1em;
 }
 
-/* background container for content*/
-html::after {
-  content: "";
-  // background: url(/images/background-img) no-repeat center;
-  display: block;
-  background-color: whitesmoke;
-  transform: rotate(5deg);
-  height: 100vh;
-  width: 70%;
-  position: sticky;
-  left: 2rem;
-  z-index: -30;
-  grid-row-start: 2
-  
-  // margin-top:0;
-} 
-
-
 //SW Grid Layout
 .page-wrapper {
   display: grid;
@@ -173,24 +149,12 @@ html::after {
   padding: 1rem;
   background-color: transparent;
 }
-// .explanation{
-//   grid-area: 1;
-// }
-.participation,
-.benefits{
-  grid-area: 2;
-}
-.requirements{
-  grid-area: 3;
-}
+//content layout
 .main-supporting{
-  display:grid;
-  grid-template-rows:1fr 1fr 1fr;
-  grid-template-areas:
-  " 1 "
-  " 2 "
-  " 3 "; 
+  display:flex; 
+  flex-wrap: nowrap;
 }
+//header layout
 header {
   grid-column: 1/3;
   grid-row: 1/2;
@@ -207,13 +171,11 @@ header {
   margin: 0px;
   h2{
     position:absolute;
-    top: 4.5rem;
+    top: 4rem;
     left: 5rem;
+    font-size: 1.75rem;
   }
 }
-// .preamble, .main-supporting{
-//   //@include skew-back;
-// }
 
 section#zen-intro {
   grid-column: 1/2;
@@ -248,6 +210,8 @@ div .preamble p:nth-of-type(3) {
     "p2 h3 "
     "p3 h3 ";
 } */
+
+//image positioning
 .preamble h3{
   float:right;
 }
@@ -260,14 +224,24 @@ div .preamble p:nth-of-type(3) {
 .requirements h3{
   float:left;
 }
+.explanation,
+.participation,
+.requirements{
+  &:nth-child(n+2){
+    float:left
+  }
+}
+.preamble{
+  margin-top:20px;
+}
 
 // footer positioning and design
 footer {
   display: flex;
-  font-size: 2.5em;
+  font-size: 2.2vw;
   position: absolute;
-  top:15%;
-  right:10%;
+  top:12%;
+  right:7%;
   z-index:2;
   .zen-validate-html,
   .zen-validate-css,
@@ -275,7 +249,7 @@ footer {
   .zen-accessibility,
   .zen-github{
     display:flex;
-    padding:20px;
+    padding:1vw;
     border-bottom: none;
     transform: rotate(25deg);
     &:hover{
@@ -283,6 +257,7 @@ footer {
     }
   }
 }
+//footer link placement
 .zen-validate-html{
   position:fixed;
   top: 10;
@@ -353,7 +328,6 @@ aside {
   box-shadow: 5px 10px 18px #888888;
   z-index:0;
   transform: rotateX(40deg) skewY(2deg) skewX(-2deg);
-  //@include skew-back;
 }
 .explanation h3::before,
 .requirements h3::before{
@@ -378,11 +352,14 @@ aside {
   h1:before {
     padding-top: 150px;
     padding-right: 205px;
+    margin:0 20px;
   }
   header{
     height:200px;
     h2{
-      top:200px;
+      top:35px;
+      left:20px;
+      font-size:20px;
     }
   }
   footer{
@@ -400,6 +377,9 @@ aside {
         transform:scale(1.25) rotate(0deg);
       }
   }
+}
+.page-wrapper{
+  grid-gap:none;
 }
 .zen-validate-html{
   top: 2%;
@@ -450,6 +430,13 @@ aside {
     background: url(/images/parallax4.png) no-repeat center;
     box-shadow: none;
   }
+   //get rid of floated image in small screen
+  .preamble h3,
+  .explanation h3,
+  .participation h3,
+  .requirements h3{
+    float:none;
+  }
 
   .intro h3:before,
   .explanation h3:before,
@@ -467,12 +454,13 @@ aside {
   aside {
     grid-column: 1/2;
     grid-row: 3;
+    &.sidebar{
+      width:100%;
+      margin:0;
+    }
   }
- /* aside.sidebar{
-    position:absolute;
-    top:0%;
-    right:-270px;
-    transform: translate3d(-260px, 0, 0);
-    transition: transform 0.35s;
-} */
+  .sidebar{
+    width:100%;
+    z-index:0;
+  }
 }
