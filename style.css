@@ -451,8 +451,8 @@ aside {
 .explanation h3::before,
 .participation h3::before,
 .requirements h3::before {
-  visibility: visible;
   content: "";
+  visibility: visible;
   padding: 180px 20px 20px;
   width: 350px;
   height: 215px;
@@ -469,7 +469,7 @@ aside {
   transform: rotateX(-40deg) skewY(-2deg) skewX(2deg);
 }
 
-.preamble h3:before {
+.intro h3:before {
   background: url(/images/1.png) no-repeat center;
 }
 
@@ -543,9 +543,6 @@ footer .zen-github:hover {
     position: relative;
     overflow: visible;
   }
-  .preamble {
-    display: block;
-  }
   .preamble,
 .explanation,
 .participation,
@@ -573,15 +570,16 @@ footer .zen-github:hover {
     box-shadow: none;
   }
   .explanation h3::before {
-    background: url(/images/parallax2.png);
+    background-image: url(/images/parallax2.png);
     box-shadow: none;
+    content: "";
   }
   .participation h3::before {
-    background: url(/images/parallax3.png);
+    background-image: url(/images/parallax3.png);
     box-shadow: none;
   }
   .requirements h3::before {
-    background: url(/images/parallax4.png);
+    background-image: url(/images/parallax4.png);
     box-shadow: none;
   }
   .intro h3::before,
