@@ -566,19 +566,23 @@ footer .zen-github:hover {
     visibility: visible;
   }
   .intro h3::before {
+    content: "";
     background-image: url(/images/parallax1.png);
     box-shadow: none;
   }
   .explanation h3::before {
+    content: "";
     background-image: url(/images/parallax2.png);
     box-shadow: none;
     content: "";
   }
   .participation h3::before {
+    content: "";
     background-image: url(/images/parallax3.png);
     box-shadow: none;
   }
   .requirements h3::before {
+    content: "";
     background-image: url(/images/parallax4.png);
     box-shadow: none;
   }
