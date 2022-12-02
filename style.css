@@ -189,7 +189,6 @@ div.wrapper h3 {
   flex-wrap: wrap;
   background: #e8b665;
   box-shadow: 10px 10px #e5ab4f;
-  height: 3fr;
   line-height: 1.1em;
 }
 
@@ -198,7 +197,6 @@ div.wrapper h3 {
   flex-direction: column;
   background: #bdcec6;
   box-shadow: 10px 10px #aec3b9;
-  height: 1fr;
   line-height: 1.1em;
 }
 
@@ -207,7 +205,6 @@ div.wrapper h3 {
   flex-direction: column;
   background: #edcabd;
   box-shadow: 10px 10px #e8baa9;
-  height: 2fr;
   line-height: 1.1em;
 }
 
@@ -327,15 +324,10 @@ p .summary {
   grid-area: p1;
 }
 
-.benefits h3 {
-  min-width: 421px;
-  grid-area: h3;
-}
-
 .benefits {
   display: grid;
   grid-gap: 15px;
-  grid-template-areas: "h3 p1";
+  grid-template-areas: " p1";
 }
 
 .requirements h3 {
@@ -368,7 +360,7 @@ p .summary {
 .requirements {
   display: grid;
   grid-gap: 15px;
-  grid-template-areas: "p1 h3" "p2 h3 " "p3 h3 " "p4 h3" "p5 p5";
+  grid-template-areas: "p1 h3" "p2 h3 " "p3 p3 " "p4 p4" "p5 p5";
 }
 
 .preamble {
@@ -377,6 +369,7 @@ p .summary {
 
 footer {
   display: flex;
+  text-transform: uppercase;
   font-size: 2.2vw;
   position: absolute;
   top: 12%;
@@ -403,31 +396,31 @@ footer .zen-github:hover {
 
 .zen-validate-html {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 44%;
 }
 
 .zen-validate-css {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 36%;
 }
 
 .zen-license {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 28%;
 }
 
 .zen-accessibility {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 18%;
 }
 
 .zen-github {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 10%;
 }
 
@@ -476,6 +469,7 @@ aside {
 
 .explanation h3::before {
   background: url(/images/2.png) no-repeat center;
+  background-size: 400px 415px;
 }
 
 .participation h3::before {

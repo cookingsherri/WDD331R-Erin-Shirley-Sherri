@@ -19,7 +19,7 @@ body {
   max-width: 1920px;
   // background-attachment: fixed;
   // background-position:50% 150%;
-  //@include skew;
+
   height: 100vh;
 }
 
@@ -118,7 +118,6 @@ div.wrapper {
   flex-wrap: wrap;
   background: #e8b665;
   box-shadow: 10px 10px darken(#e8b665, 5);
-  height: 3fr;
   line-height: 1.1em;
 }
 .design-archives {
@@ -126,7 +125,6 @@ div.wrapper {
   flex-direction: column;
   background: #bdcec6;
   box-shadow: 10px 10px darken(#bdcec6, 5);
-  height: 1fr;
   line-height: 1.1em;
 }
 .zen-resources {
@@ -134,7 +132,6 @@ div.wrapper {
   flex-direction: column;
   background: #edcabd;
   box-shadow: 10px 10px darken(#edcabd, 5);
-  height: 2fr;
   line-height: 1.1em;
 }
 
@@ -250,14 +247,11 @@ p .summary {
 .benefits p {
   grid-area: p1;
 }
-.benefits h3 {
-  min-width: 421px;
-  grid-area: h3;
-}
+
 .benefits {
   display: grid;
   grid-gap: 15px;
-  grid-template-areas: "h3 p1";
+  grid-template-areas: " p1";
 }
 .requirements h3 {
   grid-area: h3;
@@ -288,8 +282,8 @@ p .summary {
   grid-template-areas:
     "p1 h3"
     "p2 h3 "
-    "p3 h3 "
-    "p4 h3"
+    "p3 p3 "
+    "p4 p4"
     "p5 p5";
 }
 
@@ -300,6 +294,7 @@ p .summary {
 // footer positioning and design
 footer {
   display: flex;
+  text-transform: uppercase;
   font-size: 2.2vw;
   position: absolute;
   top: 12%;
@@ -322,27 +317,27 @@ footer {
 //footer link placement
 .zen-validate-html {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 44%;
 }
 .zen-validate-css {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 36%;
 }
 .zen-license {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 28%;
 }
 .zen-accessibility {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 18%;
 }
 .zen-github {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 10%;
 }
 
@@ -390,6 +385,7 @@ aside {
 }
 .explanation h3::before {
   background: url(/images/2.png) no-repeat center;
+  background-size: 400px 415px;
 }
 .participation h3::before {
   background: url(/images/3.png) no-repeat center;
@@ -433,29 +429,6 @@ aside {
       }
     }
   }
-  //SW - commented out because it was pushing content to the left
-
-  // .zen-validate-html {
-  //   position: fixed;
-  //   top: 2%;
-  //   right: 20%;
-  // }
-  // .zen-validate-css {
-  //   top: 6%;
-  //   right: 20%;
-  // }
-  // .zen-license {
-  //   top: 10%;
-  //   right: 20%;
-  // }
-  // .zen-accessibility {
-  //   top: 14%;
-  //   right: 20%;
-  // }
-  // .zen-github {
-  //   top: 18%;
-  //   right: 20%;
-  // }
 
   .zen-validate-html,
   .zen-validate-css,
