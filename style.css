@@ -89,6 +89,7 @@ body {
   color: #333;
   margin-left: 10px;
   padding: 1em;
+  max-width: 1920px;
   height: 100vh;
 }
 
@@ -133,7 +134,7 @@ aside.sidebar {
   border-radius: 15px;
   height: 100vh;
   position: sticky;
-  top: 25%;
+  top: 27%;
   bottom: 5%;
   background: #f7b09c;
   box-shadow: 10px 10px #f59d84;
@@ -188,7 +189,6 @@ div.wrapper h3 {
   flex-wrap: wrap;
   background: #e8b665;
   box-shadow: 10px 10px #e5ab4f;
-  height: 3fr;
   line-height: 1.1em;
 }
 
@@ -197,7 +197,6 @@ div.wrapper h3 {
   flex-direction: column;
   background: #bdcec6;
   box-shadow: 10px 10px #aec3b9;
-  height: 1fr;
   line-height: 1.1em;
 }
 
@@ -206,7 +205,6 @@ div.wrapper h3 {
   flex-direction: column;
   background: #edcabd;
   box-shadow: 10px 10px #e8baa9;
-  height: 2fr;
   line-height: 1.1em;
 }
 
@@ -217,7 +215,7 @@ div.wrapper h3 {
   font-size: 85%;
   color: black;
   margin: 1rem;
-  padding: 1rem;
+  padding-top: 300px;
   background-color: transparent;
 }
 
@@ -233,6 +231,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  width: 100%;
   max-height: 17rem;
   background: whitesmoke;
   z-index: 2;
@@ -254,57 +253,114 @@ div#zen-supporting {
   grid-column: 1/2;
 }
 
-div .preamble h3 {
+.preamble h3 {
   grid-area: h3;
 }
 
-div .preamble p:nth-of-type(1) {
+.preamble p:nth-of-type(1) {
   grid-area: p1;
 }
 
-div .preamble p:nth-of-type(2) {
+.preamble p:nth-of-type(2) {
   grid-area: p2;
 }
 
-div .preamble p:nth-of-type(3) {
+.preamble p:nth-of-type(3) {
   grid-area: p3;
 }
 
-.summary {
+p .summary {
   margin-top: 265px;
 }
 
-/*.preamble {
-  grid-column: 1/2;
-  grid-row: 3/4;
+.preamble {
   display: grid;
-  grid-template-columns: 60% 30%; //was 1fr 1fr plus rows of 1fr 1fr 1fr
-  grid-gap:15px;
-  grid-template-areas:
-    "p1 h3"
-    "p2 h3 "
-    "p3 h3 ";
-} */
-.preamble h3 {
-  float: right;
+  grid-template-columns: 1fr auto;
+  grid-gap: 15px;
+  grid-template-areas: "h3 p1" "h3 p2 " "h3 p3 ";
 }
 
 .explanation h3 {
-  float: left;
+  grid-area: h3;
+}
+
+.explanation p:nth-of-type(1) {
+  grid-area: p1;
+}
+
+.explanation p:nth-of-type(2) {
+  grid-area: p2;
+}
+
+.explanation {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-areas: "p1 h3" "p2 h3";
 }
 
 .participation h3 {
-  float: right;
+  grid-area: h3;
+}
+
+.participation p:nth-of-type(1) {
+  grid-area: p1;
+}
+
+.participation p:nth-of-type(2) {
+  grid-area: p2;
+}
+
+.participation p:nth-of-type(3) {
+  grid-area: p3;
+}
+
+.participation {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-areas: "h3 p1" "h3 p2 " "h3 p3 ";
+}
+
+.benefits p {
+  grid-area: p1;
+}
+
+.benefits {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-areas: " p1";
 }
 
 .requirements h3 {
-  float: left;
+  grid-area: h3;
 }
 
-.explanation:nth-child(n+2),
-.participation:nth-child(n+2),
-.requirements:nth-child(n+2) {
-  float: left;
+.requirements p:nth-of-type(1) {
+  grid-area: p1;
+}
+
+.requirements p:nth-of-type(2) {
+  grid-area: p2;
+}
+
+.requirements p:nth-of-type(3) {
+  grid-area: p3;
+}
+
+.requirements p:nth-of-type(4) {
+  grid-area: p4;
+}
+
+.requirements p:nth-of-type(5) {
+  grid-area: p5;
+  background: white;
+  padding: 35px;
+  width: 100%;
+}
+
+.requirements {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-areas: "p1 h3" "p2 h3 " "p3 p3 " "p4 p4" "p5 p5";
 }
 
 .preamble {
@@ -313,6 +369,7 @@ div .preamble p:nth-of-type(3) {
 
 footer {
   display: flex;
+  text-transform: uppercase;
   font-size: 2.2vw;
   position: absolute;
   top: 12%;
@@ -339,31 +396,31 @@ footer .zen-github:hover {
 
 .zen-validate-html {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 44%;
 }
 
 .zen-validate-css {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 36%;
 }
 
 .zen-license {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 28%;
 }
 
 .zen-accessibility {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 18%;
 }
 
 .zen-github {
   position: fixed;
-  top: 10;
+  top: 10%;
   right: 10%;
 }
 
@@ -374,17 +431,6 @@ aside {
   position: absolute;
   top: 40%;
   height: 100vh;
-}
-
-/* designated footer*/
-.requirements p:last-child {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  background: white;
-  padding: 35px;
-  width: 100%;
 }
 
 .intro h3,
@@ -399,9 +445,8 @@ aside {
 .explanation h3::before,
 .participation h3::before,
 .requirements h3::before {
-  visibility: visible;
   content: "";
-  background: url(/images/3.png) no-repeat center;
+  visibility: visible;
   padding: 180px 20px 20px;
   width: 350px;
   height: 215px;
@@ -424,6 +469,7 @@ aside {
 
 .explanation h3::before {
   background: url(/images/2.png) no-repeat center;
+  background-size: 400px 415px;
 }
 
 .participation h3::before {
@@ -434,10 +480,13 @@ aside {
   background: url(/images/4.png) no-repeat center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
+  .page-wrapper {
+    display: block;
+    padding-top: 0;
+  }
   h1:before {
     padding-top: 150px;
-    padding-right: 205px;
     margin: 0 20px;
   }
   header {
@@ -449,9 +498,10 @@ aside {
     font-size: 20px;
   }
   footer {
-    top: 27%;
-    left: 10%;
+    padding-top: 20px;
+    right: 0;
     font-size: 1.5em;
+    z-index: 0;
   }
   footer .zen-validate-html,
 footer .zen-validate-css,
@@ -468,34 +518,41 @@ footer .zen-accessibility:hover,
 footer .zen-github:hover {
     transform: scale(1.25) rotate(0deg);
   }
-  .page-wrapper {
-    grid-gap: none;
+  .zen-validate-html,
+.zen-validate-css,
+.zen-license,
+.zen-github,
+.zen-license,
+.zen-accessibility {
+    position: relative;
+    right: 0;
   }
-  .zen-validate-html {
-    top: 2%;
-    right: 5%;
-  }
-  .zen-validate-css {
-    top: 6%;
-    right: 5%;
-  }
-  .zen-license {
-    top: 10%;
-    right: 5%;
-  }
-  .zen-accessibility {
-    top: 14%;
-    right: 5%;
-  }
-  .zen-github {
-    top: 18%;
-    right: 5%;
+  footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
   }
   .summary {
     margin-top: 215px;
   }
-  .preamble {
+  .sidebar {
+    position: relative;
+    overflow: visible;
+  }
+  .preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+.sidebar {
     display: block;
+  }
+  .preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements {
+    overflow: hidden;
   }
   .intro h3,
 .explanation h3,
@@ -505,32 +562,35 @@ footer .zen-github:hover {
     visibility: visible;
   }
   .intro h3::before {
-    background: url(/images/parallax1.png) no-repeat center;
+    content: "";
+    background-image: url(/images/parallax1.png);
+    max-height: 250px;
     box-shadow: none;
   }
   .explanation h3::before {
-    background: url(/images/parallax2.png) no-repeat center;
+    content: "";
+    background-image: url(/images/parallax2.png);
     box-shadow: none;
+    max-height: 250px;
   }
   .participation h3::before {
-    background: url(/images/parallax3.png) no-repeat center;
+    content: "";
+    background-image: url(/images/parallax3.png);
     box-shadow: none;
+    max-height: 250px;
   }
   .requirements h3::before {
-    background: url(/images/parallax4.png) no-repeat center;
+    content: "";
+    background-image: url(/images/parallax4.png);
     box-shadow: none;
+    max-height: 250px;
   }
-  .preamble h3,
-.explanation h3,
-.participation h3,
-.requirements h3 {
-    float: none;
-  }
-  .intro h3:before,
-.explanation h3:before,
+  .intro h3::before,
+.explanation h3::before,
 .participation h3::before,
 .requirements h3::before,
 footer:before {
+    max-height: 100px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -538,17 +598,9 @@ footer:before {
     transform: rotateX(0deg) skewY(0deg) skewX(0deg);
     width: 100%;
   }
-  aside {
-    grid-column: 1/2;
-    grid-row: 3;
-  }
   aside.sidebar {
-    width: 100%;
-    margin: 0;
-  }
-  .sidebar {
-    width: 100%;
     z-index: 0;
+    width: 100%;
   }
 }
 
