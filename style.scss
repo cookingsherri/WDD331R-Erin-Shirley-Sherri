@@ -16,6 +16,7 @@ body {
   color: $text-dark;
   margin-left: 10px;
   padding: 1em;
+  max-width: 1920px;
   // background-attachment: fixed;
   // background-position:50% 150%;
   //@include skew;
@@ -63,12 +64,11 @@ aside.sidebar {
   border-radius: 15px;
   height: 100vh; //70%
   position: sticky;
-  top: 25%;
+  top: 27%;
   bottom: 5%;
   background: #f7b09c;
   box-shadow: 10px 10px darken(#f7b09c, 5);
   width: 100%;
-  //@include skew-back;
   font-size: 20px;
   & ul {
     margin-left: 0px;
@@ -167,7 +167,6 @@ header {
   max-height: 17rem;
   background: whitesmoke;
   z-index: 2;
-  //@include skew-back;
   padding-top: 3rem;
   margin: 0px;
   h2 {
@@ -399,7 +398,7 @@ aside {
   background: url(/images/4.png) no-repeat center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1280px) {
   .page-wrapper {
     display: block;
     padding-top: 0;
@@ -418,6 +417,7 @@ aside {
     }
   }
   footer {
+    padding-top: 20px;
     right: 0;
     font-size: 1.5em;
     z-index: 0;
@@ -507,23 +507,26 @@ aside {
   .intro h3::before {
     content: "";
     background-image: url(/images/parallax1.png);
+    max-height: 250px;
     box-shadow: none;
   }
   .explanation h3::before {
     content: "";
     background-image: url(/images/parallax2.png);
     box-shadow: none;
-    content: "";
+    max-height: 250px;
   }
   .participation h3::before {
     content: "";
     background-image: url(/images/parallax3.png);
     box-shadow: none;
+    max-height: 250px;
   }
   .requirements h3::before {
     content: "";
     background-image: url(/images/parallax4.png);
     box-shadow: none;
+    max-height: 250px;
   }
   .intro h3::before,
   .explanation h3::before,
